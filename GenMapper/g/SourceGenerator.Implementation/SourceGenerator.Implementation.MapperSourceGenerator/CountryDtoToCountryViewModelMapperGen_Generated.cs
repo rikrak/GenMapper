@@ -3,11 +3,11 @@ using System.Diagnostics.CodeAnalysis;
 using GenMapper;
 namespace GenMapper
 {
-    public partial class PersonDtoToPersonViewModelMapperGen : global::SourceGenerator.IMapper
+    public partial class CountryDtoToCountryViewModelMapperGen : global::SourceGenerator.IMapper
     {
-        protected global::GenMapper.PersonViewModel BuildTarget(global::GenMapper.PersonDto source)
+        protected global::GenMapper.CountryViewModel BuildTarget(global::GenMapper.CountryDto source)
         {
-            return new global::GenMapper.PersonViewModel();
+            return new global::GenMapper.CountryViewModel();
         }
 
 
@@ -16,7 +16,7 @@ namespace GenMapper
         public object Convert([System.Diagnostics.CodeAnalysis.AllowNull] object source)
         {
             if (source == null) { return null; }
-            var src = source as global::GenMapper.PersonDto;
+            var src = source as global::GenMapper.CountryDto;
             if (src == null)
             {
                 throw new InvalidOperationException($"{this.GetType().Name} does not support mapping from {source.GetType().Name}");
@@ -25,7 +25,7 @@ namespace GenMapper
         }
 
         [return: NotNullIfNotNull(nameof(source))]
-        public global::GenMapper.PersonViewModel? Convert(global::GenMapper.PersonDto? source)
+        public global::GenMapper.CountryViewModel? Convert(global::GenMapper.CountryDto? source)
         {
             if (source == null) return null;
             var result = BuildTarget(source);
@@ -38,12 +38,12 @@ namespace GenMapper
         {
             if (source == null) { throw new ArgumentNullException(nameof(source)); }
             if (target == null) { throw new ArgumentNullException(nameof(target)); }
-            var src = source as global::GenMapper.PersonDto;
+            var src = source as global::GenMapper.CountryDto;
             if (src == null)
             {
                 throw new InvalidOperationException($"{this.GetType().Name} does not support mapping {source.GetType().Name} to {target.GetType().Name}");
             }
-            var tgt = target as global::GenMapper.PersonViewModel;
+            var tgt = target as global::GenMapper.CountryViewModel;
             if (tgt == null)
             {
                 throw new InvalidOperationException($"{this.GetType().Name} does not support mapping {source.GetType().Name} to {target.GetType().Name}");
@@ -51,17 +51,16 @@ namespace GenMapper
             this.Map(src, tgt);
         }
 
-        public void Map(global::GenMapper.PersonDto source, global::GenMapper.PersonViewModel target)
+        public void Map(global::GenMapper.CountryDto source, global::GenMapper.CountryViewModel target)
         {
             if (source == null) { throw new ArgumentNullException(nameof(source)); }
             if (target == null) { throw new ArgumentNullException(nameof(target)); }
-            target.Id = source.Id;
             target.Name = source.Name;
         }
 
         public bool CanMap(Type sourceType, Type targetType)
         {
-            return sourceType == typeof(global::GenMapper.PersonDto) && targetType == typeof(global::GenMapper.PersonViewModel);
+            return sourceType == typeof(global::GenMapper.CountryDto) && targetType == typeof(global::GenMapper.CountryViewModel);
         }
 
     }
